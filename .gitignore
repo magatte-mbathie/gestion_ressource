@@ -1,0 +1,20 @@
+# Fichiers de configuration sensibles
+lib/dsn_perso.php
+
+# Dossier uploads
+uploads/
+
+# Fichiers temporaires
+*.tmp
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+

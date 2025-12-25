@@ -1,0 +1,17 @@
+# Configuration Apache pour le projet
+RewriteEngine On
+
+# Rediriger toutes les requêtes vers index.php si le fichier n'existe pas
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?page=$1 [QSA,L]
+
+# Protéger le dossier uploads
+<IfModule mod_rewrite.c>
+    RewriteRule ^uploads/ - [F,L]
+</IfModule>
+
+# Activer les erreurs PHP en développement (désactiver en production)
+php_flag display_errors On
+php_value error_reporting E_ALL
+
